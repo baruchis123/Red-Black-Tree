@@ -44,6 +44,24 @@ The freeFunc of this data type as per API.
 ```c
 Vector *findMaxNormVectorInTree(RBTree *tree)
 ```
-This function uses the forEachFunc of the 
+This function uses the forEachFunc of the RBTree library and the helper function copyIfNormIsLarger (to be explained below) in order to find the maximum Norm of the RBTree.
+```c
+int copyIfNormIsLarger(const void *pVector, void *pMaxVector)
+```
+A function that copies to the pMaxVector pointer, a vector of a specific node if its norm is larger than the norm of the vector currently residing in said memory location.
+
+2. String - As this data type already exists in C, only functions needed for the interface of the RBTree were added:
+```c
+int stringCompare(const void *a, const void *b)
+```
+The comparison function of the string data type,
+```c
+void freeString(void *s)
+```
+The free function for the string data type.
+```c
+int concatenate(const void *word, void *pConcatenated)
+```
+An example of a forEachFunc that iterates over an instance of a RBTree of the string data type and concatenates all its nodes.
 
 
